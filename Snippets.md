@@ -38,3 +38,24 @@
   />
 </div>
 ```
+
+##### Passing props from Server to Client Components (Serialization)
+
+Props passed from the Server to Client Components need to be serializable. This means that values such as functions, Dates, etc, cannot be passed directly to Client Components.
+
+##### To create a new type/interface by omitting an existing type/interface and changing a few properties.
+
+```jsx
+export type SafeUser = Omit<
+  User,
+  "createdAt" | "updatedAt" | "emailVerified"
+> & {
+  createdAt: string,
+  updatedAt: string,
+  emailVerified: string | null,
+};
+
+interface NavbarProps {
+  currentUser?: SafeUser | null;
+}
+```
