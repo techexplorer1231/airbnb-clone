@@ -77,9 +77,9 @@ const RegisterModal = () => {
       <hr />
       <Button
         outline
-        label="Continue with Google"
         icon={FcGoogle}
-        onClick={console.log}
+        label="Continue with Google"
+        onClick={() => signIn("google")}
       />
       <Button
         outline
@@ -106,8 +106,8 @@ const RegisterModal = () => {
       disabled={isLoading}
       isOpen={registerModal.isOpen}
       title="Register"
-      onClose={registerModal.onClose}
       actionLabel="Continue"
+      onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
       footer={footerContent}

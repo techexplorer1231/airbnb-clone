@@ -32,17 +32,17 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_Token     String? @db.String
-  access_Token      String? @db.String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
   expires_at        Int?
   token_type        String?
   scope             String?
   id_token          String? @db.String
   session_state     String?
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade) // relation to User model
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId]) // unique combination of provider and providerAccountId
+  @@unique([provider, providerAccountId])
 }
 
 model Listing {
@@ -73,5 +73,5 @@ model Reservation {
   createdAt  DateTime @default(now())
 
   user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade) // relation to Listing model
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
 }

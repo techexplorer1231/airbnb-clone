@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["datasource", "NEXTAUTH", "prismadb", "zustand"]
+  "cSpell.words": [
+    "datasource",
+    "googleusercontent",
+    "NEXTAUTH",
+    "prismadb",
+    "zustand"
+  ]
 }

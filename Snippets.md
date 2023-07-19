@@ -59,3 +59,31 @@ interface NavbarProps {
   currentUser?: SafeUser | null;
 }
 ```
+
+##### Use of query-string to parse query params.
+
+```jsx
+const handleCategoryClick = useCallback(() => {
+    let currentQuery = {};
+
+    if (params) {
+      currentQuery = qs.parse(params.toString());
+    }
+
+    const updatedQuery: any = {
+      ...currentQuery,
+      category: label,
+    };
+
+    if (params?.get("category") === label) {
+      delete updatedQuery.category;
+    }
+
+    const url = qs.stringifyUrl(
+      {
+        url: "/",
+        query: updatedQuery,
+      },
+      { skipNull: true }
+    );
+```
