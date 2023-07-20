@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
+    serverComponentsExternalPackages: ["world-countries", "react-country-flag"],
   },
   images: {
     domains: ["avatars.githubusercontent.com", "lh3.googleusercontent.com"],
