@@ -6,7 +6,6 @@ const formattedCountries = countries.map((country) => ({
   flag: country.flag,
   latlng: country.latlng,
   region: country.region,
-  onabort,
 }));
 
 const useCountries = () => {

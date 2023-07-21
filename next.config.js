@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ["world-countries", "react-country-flag"],
+    serverComponentsExternalPackages: [
+      "world-countries",
+      "react-country-flag",
+      "next-cloudinary",
+      "@prisma/client",
+    ],
   },
   images: {
     domains: [

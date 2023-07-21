@@ -1,9 +1,7 @@
 "use client";
 
-import { on } from "events";
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
-import { decl } from "postcss";
 import { useCallback } from "react";
 import { TbPhotoPlus } from "react-icons/tb";
 
