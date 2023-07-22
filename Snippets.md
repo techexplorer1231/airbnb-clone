@@ -87,3 +87,17 @@ const handleCategoryClick = useCallback(() => {
       { skipNull: true }
     );
 ```
+
+##### Using a library 'world-countries' to display a list of countries in a dropdown.
+
+```jsx
+import countries from "world-countries";
+
+const formattedCountries = countries.map((country) => ({
+  value: country.cca2,
+  label: country.name.common,
+  flag: country.flag,
+  latlng: country.latlng,
+  region: country.region,
+}));
+```
