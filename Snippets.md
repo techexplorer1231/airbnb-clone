@@ -101,3 +101,28 @@ const formattedCountries = countries.map((country) => ({
   region: country.region,
 }));
 ```
+
+##### To dynamically load map without server side rendering.
+
+```jsx
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("../Map"), {
+  ssr: false,
+});
+```
+
+##### To make sure Calendar is taking the full width of the parent element.
+
+NOTE: 'important' property means that this style will override any other style that is applied to the element by default.
+
+```css
+.rdrMonth {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  width: 100% !important;
+  font-size: 16px !important;
+}
+```
