@@ -15,8 +15,8 @@ export default async function getListings(params: IListingsParams) {
   try {
     const {
       userId,
-      guestCount,
       roomCount,
+      guestCount,
       bathroomCount,
       startDate,
       endDate,
@@ -33,17 +33,23 @@ export default async function getListings(params: IListingsParams) {
     if (category) {
       query.category = category;
     }
-    // + will transform string in to a number
-    if (guestCount) {
-      query.guestCount = { gte: +guestCount };
-    }
 
     if (roomCount) {
-      query.roomCount = { gte: +roomCount };
+      query.roomCount = {
+        gte: +roomCount,
+      };
+    }
+
+    if (guestCount) {
+      query.guestCount = {
+        gte: +guestCount,
+      };
     }
 
     if (bathroomCount) {
-      query.bathroomCount = { gte: +bathroomCount };
+      query.bathroomCount = {
+        gte: +bathroomCount,
+      };
     }
 
     if (location) {
@@ -76,13 +82,13 @@ export default async function getListings(params: IListingsParams) {
       },
     });
 
-    const SafeListings = listings.map((listing) => ({
+    const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
     }));
 
-    return SafeListings;
+    return safeListings;
   } catch (error: any) {
-    throw new Error(error.message);
+    throw new Error(error);
   }
 }
