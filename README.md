@@ -1,5 +1,7 @@
 ### Introducing the Cutting-Edge Airbnb Clone with Next.js 13 App Router: Powered by React, Tailwind CSS, Prisma, MongoDB, and NextAuth in 2023!
 
+![Airbnb Clone with Next.js 13 App Router](landing.png)
+
 1. **Modern UI with Tailwind CSS:** A sleek and visually appealing design crafted using Tailwind CSS, ensuring a delightful user experience.
 
 2. **Dynamic Animations and Effects:** Enhanced user interactions with captivating animations and effects powered by Tailwind's animation capabilities.
